@@ -49,7 +49,31 @@ Access the application in the browser:
 ### Application description
 - Main layout with no user authenticated
 
-![image1](/static/README_img_main_no_user.png)
+![image1](/static/README_img1.png)
+
+- Login
+
+![image2](/static/README_img2.png)
+
+- Main layout with authenticated user
+
+![image3](/static/README_img3.png)
+
+- New category creation
+
+![image4](/static/README_img4.png)
+
+- New item creation. This layout is fulfilled by the item details when we edit a item
+
+![image5](/static/README_img5.png)
+
+- Item detail
+
+![image6](/static/README_img6.png)
+
+- Confirmation of deletion of items and categories
+
+![image7](/static/README_img7.png)
 
 ### Enjoy
 &#128526;
