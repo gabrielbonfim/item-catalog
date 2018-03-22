@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block main %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="flash-message">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<main id="main">
+  <div class="new-item-form">
+  {% if item %}
+  <form class="form-margin" action="/item/update/{{ item.id }}" method="POST" enctype="multipart/form-data">
+  {% else %}
+  <form class="form-margin" action="/item/new" method="POST" enctype="multipart/form-data">
+  {% endif %}
+      {% if item %}
+      Name: <input class="margin-bottom" type="text" name="name" value="{{ item.name }}"><br>
+      {% else %}
+      Name: <input class="margin-bottom" type="text" name="name"><br>
+      {% endif %}
+      {% if item %}
+      Description:<br> <textarea class="margin-bottom ta-new-item" name="description">{{ item.description }}</textarea><br>
+      {% else %}
+      Description:<br> <textarea class="margin-bottom ta-new-item" name="description"></textarea><br>
+      {% endif %}
+      Picture: <input class="margin-bottom" type="file" name="picture" accept="image/*"><br>
+      Category:
+      <select class="margin-bottom" name="category">
+          {% for category in categories %}
+          {% if item %}
+              {% if category.id == item.category_id %}
+              <option selected="selected" value="{{ category.id }}">{{ category.name }}</option>
+              {% else %}
+              <option value="{{ category.id }}">{{ category.name }}</option>
+              {% endif %}
+          {% else %}
+          <option value="{{ category.id }}">{{ category.name }}</option>
+          {% endif %}
+          {% endfor %}
+      </select><br>
+      <input type="submit" value="Save">
+  </form>
+</div>
+</main>
+{% endblock %}

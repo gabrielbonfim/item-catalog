@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block main %}
+<main id="main">
+    <div class="main-categories main-margin">
+        {% if username %}
+        <h2 class="main-categories-title">Categories (<a href="/category/new" class="cat-new">new</a>)</h2>
+        {% else %}
+        <h2 class="main-categories-title">Categories</h2>
+        {% endif %}
+        <ul>
+        {% for c in categories %}
+            {% if category == c.name %}
+                {% if username %}
+                <li><a class="main-categories-list-orange" href="/category/{{ c.id }}"><b>{{c.name}}</b> (<a class="main-categories-list-delete" href="/category/delete/{{ c.id }}">delete</a>)</a></li>
+                {% else %}
+                <li><a class="main-categories-list-orange" href="/category/{{ c.id }}"><b>{{c.name}}</b></a></li>
+                {% endif%}
+            {% else%}
+                {% if username %}
+                <li><a class="main-categories-list" href="/category/{{ c.id }}">{{c.name}} (<a class="main-categories-list-delete" href="/category/delete/{{ c.id }}">delete</a>)</a></li>
+                {% else %}
+                <li><a class="main-categories-list" href="/category/{{ c.id }}">{{c.name}}</a></li>
+                {% endif %}
+            {% endif %}
+            </br>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="main-items main-margin">
+        <h2 class="main-items-title">{{ item.name }}</h2>
+        {% if item.image %}
+        <img class="main-item-image" src="/static/{{ item.image }}" alt="{{ item.name }}">
+        {% else %}
+        <img class="main-item-image" src="{{ url_for('static', filename='default.png') }}" alt="{{ item.name }}">
+        {% endif %}
+        <p>{{ item.description }}</p>
+        {% if username %}
+        <br>
+        <a class="item-details-orange" href="/item/update/{{ item.id }}">Edit</a> | <a class="item-details-orange" href="/item/delete/{{ item.id }}">Delete</a>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}

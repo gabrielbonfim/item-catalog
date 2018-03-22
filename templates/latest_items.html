@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block main %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="flash-message">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<main id="main">
+    <div class="main-categories main-margin">
+        {% if username %}
+        <h2 class="main-categories-title">Categories (<a href="/category/new" class="cat-new">new</a>)</h2>
+        {% else %}
+        <h2 class="main-categories-title">Categories</h2>
+        {% endif %}
+        <ul>
+            {% for c in categories %}
+            {% if username %}
+            <li><a class="main-categories-list" href="/category/{{ c.id }}">{{c.name}} (<a class="main-categories-list-delete" href="/category/delete/{{ c.id }}">delete</a>)</a></li>
+            {% else %}
+            <li><a class="main-categories-list" href="/category/{{ c.id }}">{{c.name}}</a></li>
+            {% endif %}
+            </br>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="main-items main-margin">
+        {% if username %}
+        <h2 class="main-items-title">Latest Items (<a href="/item/new" class="item-new">new</a>)</h2>
+        {% else %}
+        <h2 class="main-items-title">Latest Items</h2>
+        {% endif %}
+        <div class="main-items-container">
+            {% for i in items %}
+            <figure>
+                {% if i.image %}
+                <img class="main-item-image" src="/static/{{ i.image }}" alt="{{ i.name }}">
+                {% else %}
+                <img class="main-item-image" src="{{ url_for('static', filename='default.png') }}" alt="{{ i.name }}">
+                {% endif %}
+                <figcaption><a class="main-items-list" href="/item/{{ i.id }}">{{ i.name }} <span class="item-cat">({{ i.category.name }})</span></a></figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}

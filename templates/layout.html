@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+{% block head %}
+    <title>Catalog App</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//apis.google.com/js/platform.js?onload=start"></script>
+    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+{% endblock %}
+<!-- Header with login information and home button -->
+{% block header %}
+    <header>
+        <div class="header-content">
+            <a class="header-home" href="/"><img class="header-home-ico" src="{{ url_for('static', filename='home.png') }}" alt="Home"></a>
+            <h1 class="header-title">Catalog App</h1>
+            {% if username %}
+            <form action="/logout" method="GET">
+                <input id="signinButton" class="header-login_button btn" type="submit" value="Logout">
+                <img class="header-user-picture" src="{{ picture }}" alt="User Picture">
+                <span class="header-username">Welcome, {{ username }}</span>
+            </form>
+            {% else %}
+            <form action="/login" method="GET">
+                <input id="signinButton" class="header-login_button btn" type="submit" value="Login">
+            </form>
+            {% endif %}
+        </div>
+    </header>
+{% endblock %}
+<!-- Block with categories and items and their operations -->
+{% block main %}{% endblock %}
+<!-- Footer information -->
+{% block footer %}
+    <footer>
+        <hr>
+        <p class="font-roboto"><b>Gabriel Almeida</b> (Udacity Student)</p>
+    </footer>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block main %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="flash-message">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<main id="main">
+    <form class="form-margin" action="/{{ del_type }}/delete/{{ id }}" method="POST">
+        <label>{{ message }} </label>
+        <input type="submit" value="Confirm">
+        <a href="/">Cancel</a>
+    </form>
+</main>
+{% endblock %}

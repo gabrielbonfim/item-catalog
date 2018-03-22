@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block main %}
+<main id="main">
+    <script>
+        $.ajax({
+            type: 'POST',
+            url: '/gdisconnect',
+            processData: false,
+            contentType: 'application/octet-stream; charset=utf-8',
+            success: function(result) {
+                if (result) {
+                    $('#main').html(result + ' Redirecting...')
+                    setTimeout(function() {
+                    window.location.href = "/";
+                    }, 3000);
+                    
+                } else {
+                    $('#main').html('Failed to make a server-side call. Check your configuration and console.');
+                }
+            }
+        });
+    </script>
+</main>
+{% endblock %}
