@@ -48,6 +48,7 @@ Access the application in the browser:
 
 ### Application description
 - Main layout with no user authenticated
+
 ![image1](/static/README_img_main_no_user.png)
 
 ### Enjoy
