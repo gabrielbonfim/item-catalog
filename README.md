@@ -46,6 +46,8 @@ python application.py
 Access the application in the browser:
 [http://localhost:8000](http://localhost:8000)
 
+### Application description
+- Main layout with no user authenticated
 ![image1](/static/README_img_main_no_user.png)
 
 ### Enjoy
@@ -58,4 +60,4 @@ Access the application in the browser:
 [Gabriel Almeida](https://www.linkedin.com/in/gabriel-bonfim-almeida/) (Udacity Student)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/gabrielbonfim/item-catalog/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/gabrielbonfim/item-catalog/blob/master/LICENSE) file for details
