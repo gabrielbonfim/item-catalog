@@ -9,6 +9,13 @@ Application that provides a list of items within a variety of categories as well
 - `static\styles.css` - Application CSS
 - `static\default.png` - Default item image when none is defined by the user
 - `static\home.png` - Home hyperlink image
+- `static\README_img1.png` - README image - Application description
+- `static\README_img2.png` - README image - Application description
+- `static\README_img3.png` - README image - Application description
+- `static\README_img4.png` - README image - Application description
+- `static\README_img5.png` - README image - Application description
+- `static\README_img6.png` - README image - Application description
+- `static\README_img7.png` - README image - Application description
 - `templates\category_add.html` - Layout for the creation of a new category
 - `templates\category_items.html` - Layout for the items of a given category
 - `templates\delete_confirm.html` - Layout for the confirmation of categories and items delete action
@@ -25,7 +32,8 @@ Application that provides a list of items within a variety of categories as well
 ### Prerequisites
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads). You do not need to launch VirtualBox after installing it.
 - Install [Vagrant](https://www.vagrantup.com/downloads.html). Vagrant is the program that will download a Linux operating system and run it inside the virtual machine.
-- Fork the [VM configuration](https://github.com/udacity/fullstack-nanodegree-vm). `cd` into the "vagrant" directory and execute `vagrant up`. This will copy (in the first run) and start the virtual machine. Once started access the virtual machine via SSH with `vagrant ssh` (password is vagrant).
+- Fork the [VM configuration](https://github.com/gabrielbonfim/fullstack-nanodegree-vm). `cd` into the "vagrant" directory and execute `vagrant up`. This will copy (in the first run) and start the virtual machine. Once started access the virtual machine via SSH with `vagrant ssh` (password is vagrant).
+- Move to catalog folder with `cd \vagrant\catalog`
 - [Python](https://www.python.org/) - Already installed in the virtual machine
 - [Flask](http://flask.pocoo.org/) - Already installed in the virtual machine
 - [SQLAlchemy](https://www.sqlalchemy.org/) - Already installed in the virtual machine
