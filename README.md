@@ -47,7 +47,7 @@ Access the application in the browser:
 [http://localhost:8000](http://localhost:8000)
 
 ![alt text][i1]
-[i1]: https://github.com/gabrielbonfim/item-catalog/blob/master/static/README_img_main_no_user.png?raw=true "Main - no user"
+[i1]: https://github.com/gabrielbonfim/item-catalog/blob/master/static/README_img_main_no_user.png "Main - no user"
 
 ### Enjoy
 &#128526;
