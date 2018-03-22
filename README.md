@@ -46,8 +46,7 @@ python application.py
 Access the application in the browser:
 [http://localhost:8000](http://localhost:8000)
 
-![alt text][i1]
-[i1]: https://github.com/gabrielbonfim/item-catalog/blob/master/static/README_img_main_no_user.png "Main - no user"
+![image1](/static/README_img_main_no_user.png)
 
 ### Enjoy
 &#128526;
