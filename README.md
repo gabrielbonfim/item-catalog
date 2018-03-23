@@ -32,8 +32,8 @@ Application that provides a list of items within a variety of categories as well
 ### Prerequisites
 - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads). You do not need to launch VirtualBox after installing it.
 - Install [Vagrant](https://www.vagrantup.com/downloads.html). Vagrant is the program that will download a Linux operating system and run it inside the virtual machine.
-- Fork the [VM configuration](https://github.com/gabrielbonfim/fullstack-nanodegree-vm). `cd` into the "vagrant" directory and execute `vagrant up`. This will copy (in the first run) and start the virtual machine. Once started access the virtual machine via SSH with `vagrant ssh` (password is vagrant).
-- Move to catalog folder with `cd \vagrant\catalog`
+- Clone the [VM configuration](https://github.com/gabrielbonfim/fullstack-nanodegree-vm). `cd` into the "vagrant" directory and execute `vagrant up`. This will copy (in the first run) and start the virtual machine. Once started access the virtual machine via SSH with `vagrant ssh` (password is vagrant).
+- Move to catalog folder with `cd /vagrant/catalog`
 - [Python](https://www.python.org/) - Already installed in the virtual machine
 - [Flask](http://flask.pocoo.org/) - Already installed in the virtual machine
 - [SQLAlchemy](https://www.sqlalchemy.org/) - Already installed in the virtual machine
@@ -82,6 +82,12 @@ Access the application in the browser:
 - Confirmation of deletion of items and categories
 
 ![image7](/static/README_img7.png)
+
+### JSON Endpoints
+- [http://localhost:8000/api/v1.0/catalog](http://localhost:8000/api/v1.0/catalog) - Returns all the categories and its items
+- [http://localhost:8000/api/v1.0/category/all](http://localhost:8000/api/v1.0/category/all) - Returns all the categories
+- [http://localhost:8000/api/v1.0/category/<category_id>/items](http://localhost:8000/api/v1.0/category/<category_id>/items) - Returns all the items in a specific category
+- [http://localhost:8000/api/v1.0/item/<item_id>](http://localhost:8000/api/v1.0/item/<item_id>) - Returns the detail of an item
 
 ### Enjoy
 &#128526;
